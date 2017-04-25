@@ -1,6 +1,6 @@
 {
 	"name": "mage2pro/phone"
-	,"version": "0.0.1"
+	,"version": "1.0.0"
 	,"description": "A telephone number parsing library for my Magento 2 extensions."
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/mage2pro/phone"
