@@ -38,6 +38,7 @@ function df_phone_country_code($n, $throw = true) {return df_phone($n, $throw)->
 /**
  * 2017-04-22 «+7 962 919-73-00» => [«7», «962», «9197300»]
  * @used-by df_phone_area()
+ * @used-by dfe_moip_phone()
  * @param string[]|OA|QA|CA $n
  * @param bool $throw [optional]
  * @return string[]
