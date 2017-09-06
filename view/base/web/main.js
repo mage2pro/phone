@@ -100,9 +100,13 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 		// Type: string. Default: "".
 		,nationalMode: false
 		// 2017-09-07
+		// Note 1.
 		// «Display only the countries you specify. See the example:
 		// https://intl-tel-input.com/node_modules/intl-tel-input/examples/gen/only-countries-europe.html»
 		// Type: array. Default: `undefined`.
+		// Note 2.
+		// The example above uses country codes in the lower case, but the upper case does work too:
+		// I have verified it in practice.
 		,onlyCountries: c.countries
 		,preferredCountries: []
 		,separateDialCode: false
