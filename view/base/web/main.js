@@ -1,7 +1,7 @@
 // 2017-09-06
 define([
-	'df-lodash', 'jquery', 'ko', 'Df_Phone/lib/js/main'
-], function (_, $, ko) {return (
+	'df', 'df-lodash', 'jquery', 'ko', 'Df_Phone/lib/js/main'
+], function (df, _, $, ko) {return (
 /**
  * 2017-09-06
  * @param {Object} c
@@ -137,8 +137,6 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 		,utilsScript: c.utils
 	}, config.options));
 	ko.utils.registerEventHandler(e, 'change', function() {
-		config.storage('+' + this.value.replace(/\D/g, ''));
+		config.storage(df.s.normalizePhone(this.value));
 	});
-	//$e.blur();
-	//config.storage('+55 21 3139-8011');
 }};});});
