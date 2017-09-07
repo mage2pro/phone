@@ -137,20 +137,29 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 		// Type: string. Default: "".
 		,utilsScript: ''
 	}, config.options));
-	$.fn.intlTelInput.loadUtils(c.utils);
 	var $container = $e.closest('div.intl-tel-input');
 	var eValid = $container.siblings('.df-valid');
 	var eInvalid = $container.siblings('.df-invalid');
-	var reset = function() {
-		eInvalid.addClass('df-hidden');
-		eValid.addClass('df-hidden');
-	};
-	$e.blur(function() {
+	var reset = function() {eInvalid.addClass('df-hidden'); eValid.addClass('df-hidden');};
+	var validate = function() {
 		reset();
 		if ($.trim($e.val())) {
 			($e.intlTelInput('isValidNumber') ? eValid : eInvalid).removeClass('df-hidden');
 		}
+	};
+	/**
+	 * 2017-09-08
+	 * loadUtils():
+	 * https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/build/js/intlTelInput.js#L1086-L1105
+	 * handleUtils():
+	 * https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/build/js/intlTelInput.js#L938-L949
+	 */
+	require(['Df_Phone/lib/js/utils'], function() {
+		$.fn.intlTelInput.loadedUtilsScript = true;
+		$e.intlTelInput('handleUtils');
+		validate();
 	});
+	$e.blur(validate);
 	$e.on('change keyup', reset);
 	ko.utils.registerEventHandler(e, 'change', function() {config.storage(this.value);});
 }};});});
