@@ -1,7 +1,7 @@
 // 2017-09-06
 define([
-	'df', 'df-lodash', 'jquery', 'ko', 'Df_Phone/lib/js/main'
-], function (df, _, $, ko) {return (
+	'df-lodash', 'jquery', 'ko', 'Df_Phone/lib/js/main'
+], function (_, $, ko) {return (
 /**
  * 2017-09-06
  * @param {Object} c
