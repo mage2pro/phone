@@ -9,6 +9,10 @@ define([
  * @param {String} c.utils
  */
 function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var config = accessor(); var $e = $(e);
+	// 2017-09-07
+	// Unfortunately, I was forced to set it here manually,
+	// otherwise the initial value will be displayed without its country flag.
+	e.value = config.value;
 	// 2017-09-06 https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/README.md
 	$e.intlTelInput(_.extend({
 		// 2017-09-06
@@ -108,11 +112,33 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 		// The example above uses country codes in the lower case, but the upper case does work too:
 		// I have verified it in practice.
 		,onlyCountries: c.countries
+		// 2017-09-07
+		// «Specify the countries to appear at the top of the list.»
+		// Type: array. Default: ["us", "gb"].
 		,preferredCountries: []
+		// 2017-09-07
+		// «Display the country dial code next to the selected flag so it's not part of the typed number.
+		// Note that this will disable `nationalMode`
+		// because technically we are dealing with international numbers, but with the dial code separated.»
+		// Type: boolean. Default: `false`.
 		,separateDialCode: false
+		// 2017-09-07
+		// «Enable formatting/validation etc. by specifying the URL of the included utils.js script
+		// (or alternatively just point it to the file on cdnjs.com).
+		// The script is fetched using Ajax when the page has finished loading
+		// (on the window.load event) to prevent blocking.
+		// When instantiating the plugin, we return a deferred object,
+		// so you can use .done(callback) to know when initialisation requests like this have finished.
+		// See Utilities Script for more information:
+		// https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/README.md#utilities-script
+		// Note that if you're lazy loading the plugin script itself (intlTelInput.js)
+		// this will not work and you will need to use the loadUtils method instead.»
+		// Type: string. Default: "".
 		,utilsScript: c.utils
 	}, config.options));
+	ko.utils.registerEventHandler(e, 'change', function() {
+		config.storage('+' + this.value.replace(/\D/g, ''));
+	});
 	//$e.blur();
-	ko.utils.registerEventHandler(e, 'change', function() {config.storage(this.value);});
 	//config.storage('+55 21 3139-8011');
 }};});});
