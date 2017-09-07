@@ -58,7 +58,8 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 		// Type: array. Default: `undefined`.
 		,excludeCountries: []
 		// 2017-09-07
-		// «Format the input value (according to the nationalMode option) during initialisation, and on setNumber.
+		// «Format the input value (according to the nationalMode option)
+		// during initialisation, and on setNumber.
 		// Requires the `utilsScript` option.»
 		// Type: boolean . Default: `true`.
 		,formatOnDisplay: true
@@ -134,9 +135,22 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 		// Note that if you're lazy loading the plugin script itself (intlTelInput.js)
 		// this will not work and you will need to use the loadUtils method instead.»
 		// Type: string. Default: "".
-		,utilsScript: c.utils
+		,utilsScript: ''
 	}, config.options));
-	ko.utils.registerEventHandler(e, 'change', function() {
-		config.storage(df.s.normalizePhone(this.value));
+	$.fn.intlTelInput.loadUtils(c.utils);
+	var $container = $e.closest('div.intl-tel-input');
+	var eValid = $container.siblings('.df-valid');
+	var eInvalid = $container.siblings('.df-invalid');
+	var reset = function() {
+		eInvalid.addClass('df-hidden');
+		eValid.addClass('df-hidden');
+	};
+	$e.blur(function() {
+		reset();
+		if ($.trim($e.val())) {
+			($e.intlTelInput('isValidNumber') ? eValid : eInvalid).removeClass('df-hidden');
+		}
 	});
+	$e.on('change keyup', reset);
+	ko.utils.registerEventHandler(e, 'change', function() {config.storage(this.value);});
 }};});});
