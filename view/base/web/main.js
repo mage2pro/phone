@@ -14,7 +14,6 @@ define([
  * 2017-09-06
  * @param {Object} c
  * @param {String[]} c.countries
- * @param {String} c.utils
  */
 function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var config = accessor(); var $e = $(e);
 	// 2017-09-07

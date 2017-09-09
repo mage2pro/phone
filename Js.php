@@ -27,6 +27,5 @@ class Js extends _P {
 	 */
 	final protected function _toHtml() {return df_js(__CLASS__, 'main', [
 		'countries' => df_country_codes_allowed()
-		,'utils' => df_asset_create('Df_Phone::lib/js/utils.js')->getUrl()
 	]) . df_cc_br(df_link_inline('Df_Phone::lib/css/main.css', 'Df_Phone::main.css'));}
 }
