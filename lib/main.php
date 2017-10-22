@@ -66,6 +66,10 @@ function df_phone_format($n, $throw = true, $f) {return df_phone_p()->format(df_
 
 /**
  * 2017-04-22 «+79629197300»
+ * 2017-10-22
+ * @see df.s.normalizePhone():
+ * https://github.com/mage2pro/core/blob/3.2.15/Core/view/base/web/my/string.js#L64-L72 
+ * @used-by \Dfe\Stripe\Block\Multishipping::pPhone()
  * @param string[]|OA|QA|CA $n
  * @param bool $throw [optional]
  * @return string

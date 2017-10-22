@@ -21,7 +21,7 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 	// otherwise the initial value will be displayed without its country flag.
 	e.value = config.value;
 	// 2017-09-06 https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/README.md
-	$e.intlTelInput(_.extend({
+	$e.intlTelInput(_.assign({
 		// 2017-09-06
 		// «Whether or not to allow the dropdown.
 		// If disabled, there is no dropdown arrow, and the selected flag is not clickable.
