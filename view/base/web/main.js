@@ -142,13 +142,11 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 		// Type: string. Default: "".
 		,utilsScript: ''
 	}, config.options)).done(function() {
-		/**
-		 * 2017-09-08
-		 * loadUtils():
-		 * https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/build/js/intlTelInput.js#L1086-L1105
-		 * handleUtils():
-		 * https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/build/js/intlTelInput.js#L938-L949
-		 */
+		// 2017-09-08
+		// loadUtils():
+		// https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/build/js/intlTelInput.js#L1086-L1105
+		// handleUtils():
+		// https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/build/js/intlTelInput.js#L938-L949
 		require(['Df_Phone/lib/js/utils'], function() {
 			$.fn.intlTelInput.loadedUtilsScript = true;
 			$e.intlTelInput('handleUtils');
