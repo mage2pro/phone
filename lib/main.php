@@ -59,11 +59,11 @@ function df_phone_explode($n, $throw = true) {return explode(' ', df_string_clea
  * @used-by df_phone_format_clean()
  * @used-by df_phone_format_int()
  * @param string[]|OA|QA|CA $n
- * @param bool $throw [optional]
+ * @param bool $throw
  * @param int $f
  * @return string
  */
-function df_phone_format($n, $throw = true, $f) {return df_phone_p()->format(df_phone($n, $throw), $f);}
+function df_phone_format($n, $throw, $f) {return df_phone_p()->format(df_phone($n, $throw), $f);}
 
 /**
  * 2017-04-22 «+79629197300»
