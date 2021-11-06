@@ -56,6 +56,7 @@ function df_phone_explode($n, $throw = true) {return explode(' ', df_string_clea
  * "+41446681800". RFC3966 is as per INTERNATIONAL format, but with all spaces and other
  * separating symbols replaced with a hyphen, and with any phone number extension appended with
  * ";ext=". It also will have a prefix of "tel:" added, e.g. "tel:+41-44-668-1800".
+ * @used-by df_phone_format_clean()
  * @used-by df_phone_format_int()
  * @param string[]|OA|QA|CA $n
  * @param bool $throw [optional]
