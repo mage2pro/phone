@@ -1,8 +1,7 @@
 <?php
 namespace Df\Phone;
 use Magento\Framework\View\Element\AbstractBlock as _P;
-# 2017-09-06
-/** @final Unable to use the PHP «final» keyword here because of the M2 code generation. */
+/** 2017-09-06 @final Unable to use the PHP «final» keyword here because of the M2 code generation. */
 class Js extends _P {
 	/**
 	 * 2017-09-06
