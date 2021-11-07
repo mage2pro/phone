@@ -74,15 +74,12 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 		// Also note that when instantiating the plugin, we now return a deferred object,
 		// so you can use .done(callback) to know when initialisation requests like this have completed.»
 		// Type: function. Default: `null`.
-		,geoIpLookup: function(callback) {
+		,geoIpLookup: function(cb) {
 			// 2017-09-07
 			// «Note that the callback must still be called in the event of an error,
 			// hence the use of always in this example.
 			// @todo Store the result in a cookie to avoid repeat lookups!»
-			$.get('//ipinfo.io', function(){}, 'jsonp').always(function(resp) {
-				var countryCode = (resp && resp.country) ? resp.country : '';
-				callback(countryCode);
-			});
+			$.get('//ipinfo.io', function() {}, 'jsonp').always(function(r) {cb(r && r.country ? r.country : '');});
 		}
 		// 2017-09-07
 		// «Add a hidden input with the given name,
