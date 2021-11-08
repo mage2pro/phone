@@ -1,5 +1,5 @@
-define(['df', 'Df_Phone/lib/js/utils', 'Df_Ui/validator'], function(df, utils, validator) {
-	var f = function(v) {
+define(['df', 'Df_Ui/validator', 'Df_Phone/lib/js/utils'], function(df, vr) {
+	vr.add('phone', function(v) {
 		// 2017-09-09
 		// intlTelInputUtils.isValidNumber() accepts the Cyrillic letters
 		// as valid phone number characters for a some reason :-(
@@ -7,6 +7,5 @@ define(['df', 'Df_Phone/lib/js/utils', 'Df_Ui/validator'], function(df, utils, v
 		// So I have implemented an additional validation to reject such obviously invalid cases.
 		v = df.s.normalizePhone(v);
 		return /^\+\d+$/.test(v) && intlTelInputUtils.isValidNumber(v);
-	};
-	validator.add('phone', f, validator.peav('telephone number'));
+	}, vr.peav('telephone number'));
 });
