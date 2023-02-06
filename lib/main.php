@@ -11,13 +11,13 @@ use Magento\Sales\Model\Order\Address as OA;
  * @used-by df_phone_format()
  * @used-by \Dfe\CheckoutCom\Charge::cPhone()
  * @param lPhone|string[]|OA|QA|CA $n
- * @param bool $throw [optional]
+ * @param \Closure|bool|mixed $onE [optional]
  * @return lPhone|null
  * @throws lE
  */
-function df_phone($n, $throw = true) {return df_try(function() use($n) {return $n instanceof lPhone ? $n : (
+function df_phone($n, $onE = true) {return df_try(function() use($n) {return $n instanceof lPhone ? $n : (
 	df_phone_p()->parse(...(!df_is_address($n) ? $n : [$n->getTelephone(), $n->getCountryId()])
-));}, $throw);}
+));}, $onE);}
 
 /**
  * 2017-04-22 «+79629197300» => «962»
@@ -43,7 +43,7 @@ function df_phone_country_code($n, $throw = true) {return df_phone($n, $throw)->
  * @param bool $throw [optional]
  * @return string[]
  */
-function df_phone_explode($n, $throw = true) {return explode(' ', df_string_clean(df_phone_format_int(
+function df_phone_explode($n, $throw = true) {return df_explode_space(df_string_clean(df_phone_format_int(
 	$n, $throw
 ), '+', '-'));}
 
