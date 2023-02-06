@@ -11,7 +11,7 @@ use Magento\Sales\Model\Order\Address as OA;
  * @used-by df_phone_format()
  * @used-by \Dfe\CheckoutCom\Charge::cPhone()
  * @param lPhone|string[]|OA|QA|CA $n
- * @param \Closure|bool|mixed $onE [optional]
+ * @param Closure|bool|mixed $onE [optional]
  * @return lPhone|null
  * @throws lE
  */
