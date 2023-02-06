@@ -82,10 +82,10 @@ function df_phone_format_clean($n, $throw = true) {return df_phone_format($n, $t
  * 2017-04-22 «+7 962 919-73-00»
  * @used-by df_phone_explode()
  * @param string[]|OA|QA|CA $n
- * @param bool $throw [optional]
+ * @param Closure|bool|mixed $onE [optional]
  * @return string
  */
-function df_phone_format_int($n, $throw = true) {return df_phone_format($n, $throw, lFormat::INTERNATIONAL);}
+function df_phone_format_int($n, $onE = true) {return df_phone_format($n, $onE, lFormat::INTERNATIONAL);}
 
 /**
  * 2017-04-22
