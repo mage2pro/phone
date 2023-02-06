@@ -73,10 +73,10 @@ function df_phone_format($n, $throw, $f) {return df_phone_p()->format(df_phone($
  * @used-by \Dfe\Sift\Payload\Address::p()
  * @used-by \Dfe\Stripe\Block\Multishipping::pPhone()
  * @param string[]|OA|QA|CA $n
- * @param bool $throw [optional]
+ * @param Closure|bool|mixed $onE [optional]
  * @return string
  */
-function df_phone_format_clean($n, $throw = true) {return df_phone_format($n, $throw, lFormat::E164);}
+function df_phone_format_clean($n, $onE = true) {return df_phone_format($n, $onE, lFormat::E164);}
 
 /**
  * 2017-04-22 «+7 962 919-73-00»
