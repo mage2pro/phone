@@ -60,9 +60,8 @@ function df_phone_explode($n, $onE = true):array {return df_explode_space(df_str
  * @used-by df_phone_format_int()
  * @param string[]|OA|QA|CA $n
  * @param Closure|bool|mixed $onE
- * @return string
  */
-function df_phone_format($n, $onE, int $f) {return df_phone_p()->format(df_phone($n, $onE), $f);}
+function df_phone_format($n, $onE, int $f):string {return df_phone_p()->format(df_phone($n, $onE), $f);}
 
 /**
  * 2017-04-22 «+79629197300»
