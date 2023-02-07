@@ -43,7 +43,7 @@ function df_phone_country_code($n, $onE = true) {return df_phone($n, $onE)->getC
  * @param Closure|bool|mixed $onE [optional]
  * @return string[]
  */
-function df_phone_explode($n, $onE = true) {return df_explode_space(df_string_clean(df_phone_format_int(
+function df_phone_explode($n, $onE = true):array {return df_explode_space(df_string_clean(df_phone_format_int(
 	$n, $onE
 ), '+', '-'));}
 
