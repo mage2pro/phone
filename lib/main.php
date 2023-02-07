@@ -40,11 +40,11 @@ function df_phone_country_code($n, $throw = true) {return df_phone($n, $throw)->
  * @used-by df_phone_area()
  * @used-by dfe_moip_phone()
  * @param string[]|OA|QA|CA $n
- * @param bool $throw [optional]
+ * @param Closure|bool|mixed $onE [optional]
  * @return string[]
  */
-function df_phone_explode($n, $throw = true) {return df_explode_space(df_string_clean(df_phone_format_int(
-	$n, $throw
+function df_phone_explode($n, $onE = true) {return df_explode_space(df_string_clean(df_phone_format_int(
+	$n, $onE
 ), '+', '-'));}
 
 /**
