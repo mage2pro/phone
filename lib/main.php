@@ -80,9 +80,8 @@ function df_phone_format_clean($n, $onE = true):string {return df_phone_format($
  * @used-by df_phone_explode()
  * @param string[]|OA|QA|CA $n
  * @param Closure|bool|mixed $onE [optional]
- * @return string
  */
-function df_phone_format_int($n, $onE = true) {return df_phone_format($n, $onE, lFormat::INTERNATIONAL);}
+function df_phone_format_int($n, $onE = true):string {return df_phone_format($n, $onE, lFormat::INTERNATIONAL);}
 
 /**
  * 2017-04-22
