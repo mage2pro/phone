@@ -30,10 +30,10 @@ function df_phone_area($n, $throw = true) {return dfa(df_phone_explode($n, $thro
 /**
  * 2017-04-22 «+79629197300» => 7
  * @param string[]|OA|QA|CA $n
- * @param bool $throw [optional]
+ * @param Closure|bool|mixed $onE [optional]
  * @return int|null
  */
-function df_phone_country_code($n, $throw = true) {return df_phone($n, $throw)->getCountryCode();}
+function df_phone_country_code($n, $onE = true) {return df_phone($n, $onE)->getCountryCode();}
 
 /**
  * 2017-04-22 «+7 962 919-73-00» => [«7», «962», «9197300»]
