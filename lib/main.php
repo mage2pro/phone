@@ -87,6 +87,5 @@ function df_phone_format_int($n, $onE = true):string {return df_phone_format($n,
  * 2017-04-22
  * @used-by df_phone()
  * @used-by df_phone_format()
- * @return lParser
  */
-function df_phone_p() {return lParser::getInstance();};
+function df_phone_p():lParser {return lParser::getInstance();};
