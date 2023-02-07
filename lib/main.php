@@ -22,10 +22,10 @@ function df_phone($n, $onE = true) {return df_try(function() use($n) {return $n 
 /**
  * 2017-04-22 «+79629197300» => «962»
  * @param string[]|OA|QA|CA $n
- * @param bool $throw [optional]
+ * @param Closure|bool|mixed $onE [optional]
  * @return string|null
  */
-function df_phone_area($n, $throw = true) {return dfa(df_phone_explode($n, $throw), 1);}
+function df_phone_area($n, $onE = true) {return dfa(df_phone_explode($n, $onE), 1);}
 
 /**
  * 2017-04-22 «+79629197300» => 7
