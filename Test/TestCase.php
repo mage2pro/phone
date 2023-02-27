@@ -1,5 +1,5 @@
 <?php
-namespace Df\Phone\Test;
+namespace Dfe\Phone\Test;
 # 2017-04-25
-/** @see \Df\Phone\Test\Basic */
+/** @see \Dfe\Phone\Test\Basic */
 abstract class TestCase extends \Df\Payment\TestCase {}

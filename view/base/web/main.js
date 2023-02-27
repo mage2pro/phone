@@ -1,12 +1,12 @@
 // 2017-09-06
 define([
-	'df-lodash', 'jquery', 'ko', 'Df_Phone/lib/js/main'
+	'df-lodash', 'jquery', 'ko', 'Dfe_Phone/lib/js/main'
 	// 2017-09-09
 	// It is not used by the binding itself,
 	// but in practice it is always used by the binding users, so I decided to place it here,
-	// and now the binding users can write define(['Df_Phone/main'], function() {...})
-	// instead of define(['Df_Phone/main', 'Df_Phone/validator'], function() {...})
-	,'Df_Phone/validator'
+	// and now the binding users can write define(['Dfe_Phone/main'], function() {...})
+	// instead of define(['Dfe_Phone/main', 'Dfe_Phone/validator'], function() {...})
+	,'Dfe_Phone/validator'
 ], function (_, $, ko) {return (
 /**
  * 2017-09-06
@@ -144,7 +144,7 @@ function(c) {ko.bindingHandlers['df-phone'] = {init: function(e, accessor) {var 
 		// https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/build/js/intlTelInput.js#L1086-L1105
 		// handleUtils():
 		// https://github.com/jackocnr/intl-tel-input/blob/v12.0.2/build/js/intlTelInput.js#L938-L949
-		require(['Df_Phone/lib/js/utils'], function() {
+		require(['Dfe_Phone/lib/js/utils'], function() {
 			$.fn.intlTelInput.loadedUtilsScript = true;
 			$e.intlTelInput('handleUtils');
 		});

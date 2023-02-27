@@ -1,5 +1,5 @@
 <?php
-namespace Df\Phone;
+namespace Dfe\Phone;
 use Magento\Framework\View\Element\AbstractBlock as _P;
 /** 2017-09-06 @final Unable to use the PHP «final» keyword here because of the M2 code generation. */
 class Js extends _P {
@@ -25,5 +25,5 @@ class Js extends _P {
 	 */
 	final protected function _toHtml():string {return df_js(__CLASS__, '', [
 		'countries' => df_country_codes_allowed()
-	]) . df_cc_br(df_link_inline('Df_Phone::lib/css/main.css', 'Df_Phone::main.css'));}
+	]) . df_cc_br(df_link_inline('Dfe_Phone::lib/css/main.css', 'Dfe_Phone::main.css'));}
 }

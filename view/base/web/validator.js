@@ -1,4 +1,4 @@
-define(['df', 'Df_Ui/validator', 'Df_Phone/lib/js/utils'], function(df, vr) {
+define(['df', 'Df_Ui/validator', 'Dfe_Phone/lib/js/utils'], function(df, vr) {
 	vr.add('phone', function(v) {
 		// 2017-09-09
 		// intlTelInputUtils.isValidNumber() accepts the Cyrillic letters
